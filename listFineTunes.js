@@ -4,6 +4,7 @@ async function listFineTunes() {
   try {
     const response = await openai.listFineTunes()
     console.log('data: ', response.data.data)
+    console.log('data: ', response.data.data.length)
   } catch (err) {
     console.log('error:', err)
   }

@@ -1,14 +1,15 @@
 import { openai } from './api.js'
 
-async function createCompletion() {
+async function createCompletion(prompt) {
   try {
     const response = await openai.createCompletion({
-      model: 'davinci:ft-personal-2023-03-31-01-09-15',
-      prompt: 'What is Lens Protocol',
-      max_tokens: 200
+      model: 'davinci:ft-personal-2023-04-27-08-50-17',
+      prompt: prompt,
+      max_tokens: 20,
+  
     })
     if (response.data) {
-      console.log('choices: ', response.data.choices)
+      console.log('choices: ', response.data)
     }
   } catch (err) {
     console.log('err: ', err)

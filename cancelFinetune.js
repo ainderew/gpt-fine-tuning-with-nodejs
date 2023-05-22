@@ -1,12 +1,9 @@
 import { openai } from './api.js'
-import { fileId } from './fileId.js'
+
 
 async function createFineTune() {
   try {
-    const response = await openai.createFineTune({
-      training_file: fileId,
-      model: 'davinci'
-    })
+    const response = await openai.cancelFineTune('ft-KGWfbWv44vAPf71FCz5L08j3')
     console.log('response: ', response)
   } catch (err) {
     console.log('error: ', err.response.data.error)
